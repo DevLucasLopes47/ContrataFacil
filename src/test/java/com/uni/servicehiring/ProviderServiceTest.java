@@ -10,20 +10,25 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProviderServiceTest {
 
     @Test
     void shouldFilterByCategory() {
 
-        var repo = new InMemoryProviderRepository();
-        var service = new ProviderService(repo, new ProviderFilterEngine());
+        var repository = new InMemoryProviderRepository();
+        var service = new ProviderService(repository, new ProviderFilterEngine());
 
         var provider = UserFactory.createProvider(
-                "1", "João", "email",
+                "1",
+                "João",
+                "joao@email.com",
+                "11122233344",
+                "31999990000",
                 Set.of(Category.CARPENTRY),
-                5.0, 10
+                5.0,
+                10
         );
 
         service.registerProvider(provider);
@@ -31,5 +36,30 @@ class ProviderServiceTest {
         var result = service.search(new CategorySpecification(Category.CARPENTRY));
 
         assertEquals(1, result.size());
+        assertEquals("João", result.get(0).getName());
+    }
+
+    @Test
+    void shouldReturnEmptyListWhenCategoryDoesNotMatch() {
+
+        var repository = new InMemoryProviderRepository();
+        var service = new ProviderService(repository, new ProviderFilterEngine());
+
+        var provider = UserFactory.createProvider(
+                "1",
+                "João",
+                "joao@email.com",
+                "11122233344",
+                "31999990000",
+                Set.of(Category.CARPENTRY),
+                5.0,
+                10
+        );
+
+        service.registerProvider(provider);
+
+        var result = service.search(new CategorySpecification(Category.CLEANING));
+
+        assertEquals(0, result.size());
     }
 }
