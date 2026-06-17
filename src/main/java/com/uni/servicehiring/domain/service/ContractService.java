@@ -1,6 +1,8 @@
 package com.uni.servicehiring.domain.service;
 
-import com.uni.servicehiring.domain.model.*;
+import com.uni.servicehiring.domain.model.Client;
+import com.uni.servicehiring.domain.model.Contract;
+import com.uni.servicehiring.domain.model.Provider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,13 +12,36 @@ public class ContractService {
 
     private final List<Contract> contracts = new ArrayList<>();
 
-    public Contract createContract(Client client, Provider provider) {
-        Contract contract = new Contract(UUID.randomUUID().toString(), client, provider);
+    public Contract createContract(Client client, Provider provider, String description) {
+        Contract contract = new Contract(
+                UUID.randomUUID().toString(),
+                client,
+                provider,
+                description
+        );
+
         contracts.add(contract);
+
         return contract;
     }
 
+    public void acceptContract(Contract contract) {
+        if (contract == null) {
+            throw new IllegalArgumentException("Contrato é obrigatório.");
+        }
+
+        contract.accept();
+    }
+
+    public void rejectContract(Contract contract) {
+        if (contract == null) {
+            throw new IllegalArgumentException("Contrato é obrigatório.");
+        }
+
+        contract.reject();
+    }
+
     public List<Contract> list() {
-        return contracts;
+        return new ArrayList<>(contracts);
     }
 }
