@@ -21,8 +21,8 @@ public class Main {
 
         Provider p1 = UserFactory.createProvider(
                 "1",
-                "João",
-                "joao@mail.com",
+                "Leo",
+                "leo@gmail.com",
                 Set.of(Category.CARPENTRY),
                 4.8,
                 120
@@ -30,8 +30,8 @@ public class Main {
 
         Provider p2 = UserFactory.createProvider(
                 "2",
-                "Maria",
-                "maria@mail.com",
+                "Lucas",
+                "lucas@gmail.com",
                 Set.of(Category.CLEANING),
                 4.2,
                 80
@@ -50,7 +50,7 @@ public class Main {
                 System.out.println(p.getName())
         );
 
-        Client client = UserFactory.createClient("10", "Cliente X", "c@c.com");
+        Client client = UserFactory.createClient("10", "Luis", "luis@gmail.com");
 
         Contract contract = contractService.createContract(client, p1);
 
