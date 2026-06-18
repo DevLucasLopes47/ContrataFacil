@@ -397,7 +397,7 @@ A saída esperada é semelhante a:
 
 ```text
 ======================================
-CONTRAFÁCIL - DEMONSTRAÇÃO BACK-END
+CONTRATAFÁCIL - DEMONSTRAÇÃO BACK-END
 ======================================
 
 1. Profissionais cadastrados:
@@ -543,7 +543,7 @@ documentacao/
 Arquivo esperado:
 
 ```text
-Trabalho_A3_ContraFacil.pdf
+Trabalho_A3_ContrataFacil.pdf
 ```
 
 A documentação contempla:
