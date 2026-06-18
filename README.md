@@ -1,4 +1,4 @@
-# ContraFácil
+# ContrataFácil
 
 Sistema back-end para contratação de profissionais autônomos, desenvolvido em Java puro utilizando Maven, princípios SOLID, padrões de projeto e testes unitários.
 
