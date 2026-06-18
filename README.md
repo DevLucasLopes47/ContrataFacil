@@ -20,7 +20,7 @@ Este projeto foi desenvolvido para a disciplina **Modelos, Métodos e Técnicas 
 
 ## Escopo do Projeto
 
-O ContraFácil foi desenvolvido como um MVP acadêmico, ou seja, uma versão inicial e simplificada da solução.
+O ContrataFácil foi desenvolvido como um MVP acadêmico, ou seja, uma versão inicial e simplificada da solução.
 
 O foco do projeto é demonstrar a aplicação dos conceitos de Engenharia de Software em uma aplicação back-end Java, sem interface gráfica e sem banco de dados.
 
@@ -397,7 +397,7 @@ A saída esperada é semelhante a:
 
 ```text
 ======================================
-CONTRAFÁCIL - DEMONSTRAÇÃO BACK-END
+CONTRATAFÁCIL - DEMONSTRAÇÃO BACK-END
 ======================================
 
 1. Profissionais cadastrados:
@@ -543,7 +543,7 @@ documentacao/
 Arquivo esperado:
 
 ```text
-Trabalho_A3_ContraFacil.pdf
+Trabalho_A3_ContrataFacil.pdf
 ```
 
 A documentação contempla:
@@ -594,7 +594,7 @@ service-hiring-system
 │   ├── diagrama-casos-uso.drawio
 │   └── diagrama-casos-uso.png
 ├── documentacao
-│   └── Trabalho_A3_ContraFacil.pdf
+│   └── Trabalho_A3_ContrataFacil.pdf
 ├── .gitignore
 ├── pom.xml
 └── README.md
