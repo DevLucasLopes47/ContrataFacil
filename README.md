@@ -8,7 +8,6 @@ O objetivo do projeto é permitir que clientes encontrem e contratem profissiona
 
 # Grupo
 
-- Gustavo Nunes Cunha; 123113556
 - Leonardo Oliveira Morais; 1242020286
 - Luis Filipe da Silva Periard; 1232021702
 - Lucas Gabriel Lopes de Souza; 12317548
