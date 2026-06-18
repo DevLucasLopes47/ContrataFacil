@@ -1,0 +1,113 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Diagrama de Classes" id="5fYZOvnEIrV6iHFIlOii">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="j2xLAsS2t99Euy41-9mX-1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;" value="ContrataFácil — Diagrama de Classes" vertex="1">
+          <mxGeometry height="40" width="560" x="520" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-2" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;shadow=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=170;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" value="&lt;b&gt;&amp;lt;&amp;lt;abstract&amp;gt;&amp;gt;&lt;br&gt;User&lt;/b&gt;&lt;hr&gt;- id: String&lt;br&gt;- name: String&lt;br&gt;- email: String&lt;hr&gt;+ getId(): String&lt;br&gt;+ getName(): String&lt;br&gt;+ getEmail(): String" vertex="1">
+          <mxGeometry height="170" width="240" x="80" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-3" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;startSize=110;collapsible=0;" value="&lt;b&gt;Client&lt;/b&gt;&lt;hr&gt;- password: String&lt;hr&gt;+ getPassword(): String" vertex="1">
+          <mxGeometry height="110" width="220" x="90" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-4" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;startSize=250;collapsible=0;" value="&lt;b&gt;Provider&lt;/b&gt;&lt;hr&gt;- cpf: String&lt;br&gt;- phone: String&lt;br&gt;- categories: Set&amp;lt;Category&amp;gt;&lt;br&gt;- rating: double&lt;br&gt;- ratingCount: int&lt;br&gt;- completedJobs: int&lt;hr&gt;+ registerRating(newRating: double): void&lt;br&gt;+ incrementCompletedJobs(): void&lt;br&gt;+ getCategories(): Set&amp;lt;Category&amp;gt;&lt;br&gt;+ getRating(): double&lt;br&gt;+ getCompletedJobs(): int" vertex="1">
+          <mxGeometry height="250" width="330" x="480" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-5" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;startSize=150;collapsible=0;" value="&lt;b&gt;&amp;lt;&amp;lt;enum&amp;gt;&amp;gt;&lt;br&gt;Category&lt;/b&gt;&lt;hr&gt;CARPENTRY&lt;br&gt;GLASSWORK&lt;br&gt;CLEANING&lt;br&gt;ELECTRICAL&lt;br&gt;PLUMBING" vertex="1">
+          <mxGeometry height="150" width="210" x="650" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-6" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;startSize=120;collapsible=0;" value="&lt;b&gt;&amp;lt;&amp;lt;enum&amp;gt;&amp;gt;&lt;br&gt;ContractStatus&lt;/b&gt;&lt;hr&gt;PENDING&lt;br&gt;ACCEPTED&lt;br&gt;REJECTED" vertex="1">
+          <mxGeometry height="120" width="210" x="450" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-7" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;startSize=210;collapsible=0;" value="&lt;b&gt;Contract&lt;/b&gt;&lt;hr&gt;- id: String&lt;br&gt;- client: Client&lt;br&gt;- provider: Provider&lt;br&gt;- description: String&lt;br&gt;- date: LocalDateTime&lt;br&gt;- status: ContractStatus&lt;hr&gt;+ accept(): void&lt;br&gt;+ reject(): void&lt;br&gt;+ getStatus(): ContractStatus" vertex="1">
+          <mxGeometry height="210" width="320" x="40" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-8" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;startSize=110;collapsible=0;" value="&lt;b&gt;UserFactory&lt;/b&gt;&lt;hr&gt;+ createClient(...): Client&lt;br&gt;+ createProvider(...): Provider" vertex="1">
+          <mxGeometry height="110" width="280" x="380" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-9" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;startSize=120;collapsible=0;" value="&lt;b&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;ProviderRepository&lt;/b&gt;&lt;hr&gt;+ save(provider: Provider): void&lt;br&gt;+ findAll(): List&amp;lt;Provider&amp;gt;" vertex="1">
+          <mxGeometry height="120" width="310" x="940" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-10" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;startSize=140;collapsible=0;" value="&lt;b&gt;InMemoryProviderRepository&lt;/b&gt;&lt;hr&gt;- database: List&amp;lt;Provider&amp;gt;&lt;hr&gt;+ save(provider: Provider): void&lt;br&gt;+ findAll(): List&amp;lt;Provider&amp;gt;" vertex="1">
+          <mxGeometry height="140" width="330" x="1090" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-11" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;startSize=150;collapsible=0;" value="&lt;b&gt;ProviderService&lt;/b&gt;&lt;hr&gt;- repository: ProviderRepository&lt;br&gt;- filterEngine: ProviderFilterEngine&lt;hr&gt;+ registerProvider(provider: Provider): void&lt;br&gt;+ search(spec: Specification): List&amp;lt;Provider&amp;gt;" vertex="1">
+          <mxGeometry height="150" width="350" x="1270" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-12" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;startSize=170;collapsible=0;" value="&lt;b&gt;ContractService&lt;/b&gt;&lt;hr&gt;- contracts: List&amp;lt;Contract&amp;gt;&lt;hr&gt;+ createContract(client, provider, description): Contract&lt;br&gt;+ acceptContract(contract): void&lt;br&gt;+ rejectContract(contract): void&lt;br&gt;+ list(): List&amp;lt;Contract&amp;gt;" vertex="1">
+          <mxGeometry height="170" width="360" x="30" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-13" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;startSize=100;collapsible=0;" value="&lt;b&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;Specification&lt;/b&gt;&lt;hr&gt;+ isSatisfiedBy(provider: Provider): boolean" vertex="1">
+          <mxGeometry height="100" width="300" x="1190" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-14" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;startSize=115;collapsible=0;" value="&lt;b&gt;CategorySpecification&lt;/b&gt;&lt;hr&gt;- category: Category&lt;hr&gt;+ isSatisfiedBy(provider): boolean" vertex="1">
+          <mxGeometry height="115" width="250" x="760" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-15" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;startSize=115;collapsible=0;" value="&lt;b&gt;RatingSpecification&lt;/b&gt;&lt;hr&gt;- minRating: double&lt;hr&gt;+ isSatisfiedBy(provider): boolean" vertex="1">
+          <mxGeometry height="115" width="250" x="1050" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-16" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;startSize=115;collapsible=0;" value="&lt;b&gt;CompositeSpecification&lt;/b&gt;&lt;hr&gt;- specs: List&amp;lt;Specification&amp;gt;&lt;hr&gt;+ isSatisfiedBy(provider): boolean" vertex="1">
+          <mxGeometry height="115" width="270" x="1360" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-17" parent="1" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;startSize=100;collapsible=0;" value="&lt;b&gt;ProviderFilterEngine&lt;/b&gt;&lt;hr&gt;+ filter(providers: List&amp;lt;Provider&amp;gt;, spec: Specification): List&amp;lt;Provider&amp;gt;" vertex="1">
+          <mxGeometry height="100" width="360" x="1225" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-18" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-3" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" target="j2xLAsS2t99Euy41-9mX-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-19" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-4" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;" target="j2xLAsS2t99Euy41-9mX-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-20" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-4" style="endArrow=open;html=1;rounded=0;strokeWidth=1;" target="j2xLAsS2t99Euy41-9mX-5" value="usa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-21" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-7" style="endArrow=open;html=1;rounded=0;strokeWidth=1;" target="j2xLAsS2t99Euy41-9mX-3" value="cliente">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-22" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-7" style="endArrow=open;html=1;rounded=0;strokeWidth=1;" target="j2xLAsS2t99Euy41-9mX-4" value="profissional">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-23" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-7" style="endArrow=open;html=1;rounded=0;strokeWidth=1;" target="j2xLAsS2t99Euy41-9mX-6" value="status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-24" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-10" style="endArrow=block;endFill=0;dashed=1;html=1;rounded=0;strokeWidth=2;" target="j2xLAsS2t99Euy41-9mX-9" value="implementa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-25" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-11" style="endArrow=open;dashed=1;html=1;rounded=0;" target="j2xLAsS2t99Euy41-9mX-9" value="depende de">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1350" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-26" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-11" style="endArrow=open;dashed=1;html=1;rounded=0;" target="j2xLAsS2t99Euy41-9mX-17" value="usa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-27" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-12" style="endArrow=open;dashed=1;html=1;rounded=0;" target="j2xLAsS2t99Euy41-9mX-7" value="gerencia">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-28" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-14" style="endArrow=block;endFill=0;dashed=1;html=1;rounded=0;strokeWidth=2;" target="j2xLAsS2t99Euy41-9mX-13" value="implementa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-29" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-15" style="endArrow=block;endFill=0;dashed=1;html=1;rounded=0;strokeWidth=2;" target="j2xLAsS2t99Euy41-9mX-13" value="implementa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-30" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-16" style="endArrow=block;endFill=0;dashed=1;html=1;rounded=0;strokeWidth=2;" target="j2xLAsS2t99Euy41-9mX-13" value="implementa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-31" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-17" style="endArrow=open;dashed=1;html=1;rounded=0;" target="j2xLAsS2t99Euy41-9mX-13" value="usa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-32" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-8" style="endArrow=open;dashed=1;html=1;rounded=0;" target="j2xLAsS2t99Euy41-9mX-3" value="cria">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2xLAsS2t99Euy41-9mX-33" edge="1" parent="1" source="j2xLAsS2t99Euy41-9mX-8" style="endArrow=open;dashed=1;html=1;rounded=0;" target="j2xLAsS2t99Euy41-9mX-4" value="cria">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
