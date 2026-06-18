@@ -594,7 +594,7 @@ service-hiring-system
 │   ├── diagrama-casos-uso.drawio
 │   └── diagrama-casos-uso.png
 ├── documentacao
-│   └── Trabalho_A3_ContraFacil.pdf
+│   └── Trabalho_A3_ContrataFacil.pdf
 ├── .gitignore
 ├── pom.xml
 └── README.md
